@@ -23,7 +23,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router'
                         class="app-navbar__menu-item"
                         routerLinkActive="app-navbar__active-link"
                     >
-                        <a [routerLink]="menuItem.route">
+                        <a
+                            [routerLink]="menuItem.route"
+                        >
                             <img
                                 [src]="'assets/icons/' + menuItem.icon"
                                 alt="Menu Icon"

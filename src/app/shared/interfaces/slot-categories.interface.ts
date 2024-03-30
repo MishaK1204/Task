@@ -1,25 +1,4 @@
-interface ImageSet {
-    blurhash: string | null
-    original: string
-    webp: string
-}
-
-interface Game {
-    game_id: string
-    name: string
-    provider: string
-    providerName: string
-    image: string
-    url: string
-    order: number
-    tags: string[]
-    stats: any[]
-    favoriteCount: number
-    imageSet: ImageSet
-    remoteId: string
-    gameId: string
-    image2: string
-}
+import { GameI } from './game.interface'
 
 export interface CategoryI {
     type: string
@@ -27,6 +6,6 @@ export interface CategoryI {
     platform: string
     name: string
     order: number
-    games: Game[]
+    games: GameI[]
     totalGames: number
 }

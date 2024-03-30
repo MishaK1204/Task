@@ -2,14 +2,19 @@ $block: '.app-navbar';
 
 #{$block} {
     &__top-navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
         height: 8rem;
 
         color: white;
         background-color: #252b33;
+        z-index: 1000;
     }
 
     &__side-navbar {
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         bottom: 0;
@@ -46,6 +51,8 @@ $block: '.app-navbar';
             align-items: center;
             gap: 1rem;
 
+            width: 100%;
+
             text-decoration: none;
             color: #6a7787;
 
@@ -61,6 +68,10 @@ $block: '.app-navbar';
 
     &__active-link {
         position: relative;
+
+        a {
+            filter: brightness(0) invert(1);
+        }
 
         &::after {
             position: absolute;

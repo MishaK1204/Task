@@ -7,8 +7,7 @@ $block: '.app-slot-categories';
         align-items: center;
         gap: 4rem;
 
-        height: 5.3rem;
-        padding: 0 1.8rem;
+        padding: 1rem 1.8rem 0 1.8rem;
         font-size: 1.4rem;
         line-height: 1.4rem;
         color: white;
@@ -18,6 +17,8 @@ $block: '.app-slot-categories';
     }
 
     &__category-item {
+        position: relative;
+
         display: flex;
         align-items: flex-end;
         justify-content: center;
@@ -67,5 +68,11 @@ $block: '.app-slot-categories';
             transform: translateY(-50%);
             border-radius: 0.5rem 0.5rem 0 0;
         }
+    }
+
+    &__total-games {
+        position: absolute;
+        top: 0;
+        right: -1rem;
     }
 }

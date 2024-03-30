@@ -18,6 +18,27 @@ export const routes: Routes = [
                         (m) => m.SlotsComponent
                     ),
             },
+            {
+                path: 'sports',
+                loadComponent: () =>
+                    import('./features/sport/sport.component').then(
+                        (m) => m.SportComponent
+                    ),
+            },
+            {
+                path: 'live',
+                loadComponent: () =>
+                    import('./features/live/live.component').then(
+                        (m) => m.LiveComponent
+                    ),
+            },
+            {
+                path: 'casino',
+                loadComponent: () =>
+                    import('./features/casino/casino.component').then(
+                        (m) => m.CasinoComponent
+                    ),
+            },
         ],
     },
 ]

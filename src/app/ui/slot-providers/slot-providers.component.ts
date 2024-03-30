@@ -15,6 +15,7 @@ import { toSignal } from '@angular/core/rxjs-interop'
                     routerLinkActive="app-slot-providers__active-link"
                 >
                     <a
+                        (click)="onProviderChange(provider.provider)"
                         routerLink=""
                         [queryParams]="{
                             provider: provider.provider
@@ -46,4 +47,8 @@ export class SlotProvidersComponent {
 
     providers = toSignal(this.slotsService.getProviders())
     slotProvidersExpanded = false
+
+    onProviderChange(category: string) {
+        this.slotsService.getSlotsByProvider(category).subscribe()
+    }
 }

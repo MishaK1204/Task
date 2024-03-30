@@ -30,7 +30,8 @@ import { navbarMenuItems } from './shared/constants/navbar-menu-items'
             }
 
             main {
-                margin: 0.8rem 0.8rem 0.8rem 8.8rem;
+                height: 100vh;
+                margin: 8.8rem 0.8rem 0.8rem 8.8rem;
             }
         `,
     ],
