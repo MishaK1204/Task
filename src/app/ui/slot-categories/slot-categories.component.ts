@@ -3,6 +3,7 @@ import { SlotCategories } from '../../shared/constants/slots-categories'
 import { RouterLink, RouterLinkActive } from '@angular/router'
 import { SlotsService } from '../../shared/services/slots.service'
 import { NgClass } from '@angular/common'
+import { TranslateModule } from '@ngx-translate/core'
 
 @Component({
     selector: 'app-slot-categories',
@@ -20,9 +21,13 @@ import { NgClass } from '@angular/common'
                     routerLinkActive="app-slot-categories__active-link"
                 >
                     @if (slotsService.totalGames()) {
-                        <div class="app-slot-categories__total-games">{{
-                            slotsService.totalGames()?.get(category.category)
-                        }}</div>
+                        <div class="app-slot-categories__total-games">
+                            {{
+                                slotsService
+                                    .totalGames()
+                                    ?.get(category.category)
+                            }}
+                        </div>
                     }
 
                     <a
@@ -37,14 +42,14 @@ import { NgClass } from '@angular/common'
                             style="width: 2rem; height: 2rem;"
                             alt="Category Icon"
                         />
-                        {{ category.name }}</a
+                        {{ category.name | translate }}</a
                     >
                 </li>
             }
         </ul>
     `,
     styleUrls: ['slot-categories.component.scss'],
-    imports: [RouterLink, RouterLinkActive, NgClass],
+    imports: [RouterLink, RouterLinkActive, NgClass, TranslateModule],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SlotCategoriesComponent {

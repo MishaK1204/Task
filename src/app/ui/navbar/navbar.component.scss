@@ -13,6 +13,35 @@ $block: '.app-navbar';
         z-index: 1000;
     }
 
+    &__languages-container {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        height: 100%;
+    }
+
+    &__language-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.8rem 1rem 0.8rem 0.6rem;
+        border: solid 0.1rem rgba(89, 103, 122, 0.69);
+        border-radius: 0.4rem;
+        background-color: transparent;
+        color: white;
+        cursor: pointer;
+
+        &:hover,
+        &.active {
+            background-color: #444f5d;
+        }
+    }
+
     &__side-navbar {
         position: fixed;
         top: 0;

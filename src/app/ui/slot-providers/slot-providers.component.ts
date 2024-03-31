@@ -3,6 +3,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router'
 import { NgClass } from '@angular/common'
 import { SlotsService } from '../../shared/services/slots.service'
 import { toSignal } from '@angular/core/rxjs-interop'
+import { TranslateModule } from '@ngx-translate/core'
 
 @Component({
     selector: 'app-slot-providers',
@@ -31,11 +32,15 @@ import { toSignal } from '@angular/core/rxjs-interop'
             class="app-slot-providers__see-more-btn"
             (click)="slotProvidersExpanded = !slotProvidersExpanded"
         >
-            See More
+            {{ (slotProvidersExpanded ? 'see_less' : 'see_more') | translate }}
+            <img
+                src="assets/icons/expand.svg"
+                [ngClass]="{ rotate: !slotProvidersExpanded }"
+            />
         </button>
     `,
     styleUrls: ['slot-providers.component.scss'],
-    imports: [RouterLink, NgClass, RouterLinkActive],
+    imports: [RouterLink, NgClass, RouterLinkActive, TranslateModule],
     changeDetection: ChangeDetectionStrategy.OnPush,
     host: {
         '[class.app-slot-providers]': 'true',

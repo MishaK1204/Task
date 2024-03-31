@@ -5,10 +5,12 @@ import { CategoryI } from '../interfaces/slot-categories.interface'
 import { map, tap } from 'rxjs'
 import { SlotsByProviderI } from '../interfaces/slots-by-provider.interface'
 import { GameI } from '../interfaces/game.interface'
+import { environment } from '../../../environments/environment'
 
 @Injectable({ providedIn: 'root' })
 export class SlotsService {
     private http: HttpClient = inject(HttpClient)
+    private baseUrl = environment.baseUrl
 
     games = signal<GameI[] | null>(null)
     totalGames = signal<Map<string, number> | null>(null)
@@ -33,9 +35,7 @@ export class SlotsService {
         return this.http
             .get<{
                 data: CategoryI[]
-            }>(
-                `https://cms.crocobet.com/integrations/v2/slot/categories?include=games`
-            )
+            }>(`${this.baseUrl}v2/slot/categories?include=games`)
             .pipe(
                 tap((res) => {
                     res.data.forEach((category) => {
@@ -58,7 +58,7 @@ export class SlotsService {
 
         return this.http
             .get<SlotsByProviderI>(
-                `https://cms.crocobet.com/integrations/v2/slot/providers/${provider}`
+                `${this.baseUrl}v2/slot/providers/${provider}`
             )
             .pipe(
                 tap((res) => {
@@ -74,9 +74,7 @@ export class SlotsService {
         return this.http
             .get<{
                 data: CategoryI[]
-            }>(
-                `https://cms.crocobet.com/integrations/v2/slot/categories?include=games`
-            )
+            }>(`${this.baseUrl}v2/slot/categories?include=games`)
             .pipe(
                 map((res) => {
                     return (

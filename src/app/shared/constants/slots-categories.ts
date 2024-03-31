@@ -1,27 +1,27 @@
 export const SlotCategories = [
     {
         icon: `top-slots.svg`,
-        name: 'Top Slots',
+        name: 'top_slots',
         category: 'web:popular',
     },
     {
         icon: `favorites.svg`,
-        name: 'Favorites',
+        name: 'favorites',
         category: 'web:favorites',
     },
     {
         icon: `new-games.svg`,
-        name: 'New Games',
+        name: 'new_games',
         category: 'web:new_games',
     },
     {
         icon: `bonus.svg`,
-        name: 'Buy Bonus',
+        name: 'buy_bonus',
         category: 'web:buy_bonus',
     },
     {
         icon: `history.svg`,
-        name: 'History',
+        name: 'history',
         category: 'web:history',
     },
 ]

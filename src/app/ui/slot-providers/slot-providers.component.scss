@@ -38,7 +38,7 @@ $block: '.app-slot-providers';
 
     &__providers-list-item {
         a {
-          padding: 0 0.5rem;
+            padding: 0 0.5rem;
         }
 
         &:hover {
@@ -47,14 +47,19 @@ $block: '.app-slot-providers';
     }
 
     &__see-more-btn {
-        flex: 1;
-        width: 10rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        gap: 1rem;
+        width: 13rem;
         height: fit-content;
 
         color: #fff;
         background-color: transparent;
         outline: none;
         border: none;
+        cursor: pointer;
     }
 
     &__active-link {
@@ -75,4 +80,8 @@ $block: '.app-slot-providers';
             border-radius: 0.5rem 0.5rem 0 0;
         }
     }
+}
+
+.rotate {
+    transform: rotate(180deg);
 }
